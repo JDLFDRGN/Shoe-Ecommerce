@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+input:focus, textarea:focus{
+    outline: none;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color:snow;
+}
+pre{
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+/*Top navigation*/
+#top-navigation{
+position: fixed;
+display: flex;
+width: 100%;
+height: 15vh;
+padding: 0.5em 1em 1em;
+font-family: sans-serif;
+z-index: 10;
+background-color: whitesmoke;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#top-navigation>form{
+    width: 100%;
+}
+#top-navigation>form>ul{
+    height: inherit;
+    width: inherit;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+#top-navigation li{
+    display: flex;
+    align-items: center; 
+}
+#title{
+    font-size: 1.3em;
+    width: 35%;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+#menu:hover{
+    cursor: pointer;
+}
+#search{
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 2.5em;
+    z-index: 10;
+    border: 1px solid black;
+    border-radius: 10px;
+    border: 2px solid orangered;
+}
+#search>input{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-style: none;
+}
+#search>input::placeholder, input::placeholder{
+    color: rgba(0, 0, 0, 0.7);
+}
+#search>button{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-style: none;
+    background-color: orangered;
+}
+#register{
+    display: flex;
+    font-size: 1.3em;
+    justify-content: center;
+    width: 10%;
+    height: 2.5em;
+}
+#home, #sell, #register{
+    display: flex;
+    justify-content: center;
+    height: 2.5em;
+    font-size: 1.3em;
+}
+#home:hover>a, #sell:hover>a, #register>a:nth-child(1):hover,#register>a:nth-child(3):hover{
+    color: orangered;
+}
+#register>a:nth-child(2):hover{
+    cursor: pointer;
+    color: orangered;
+}
+#register{
+    width: 14%;
+}
+#logo{
+    height: 4em;
+    width: 7em;
+    border-radius: 10px;
+    margin-right: 1em;
+}
+/*Side navigation*/
+#side-navigation{
+    width: 15em;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-left: 1em;
+    position: fixed;
+    left: -15em;
+    transition: 1s;
+    background-color: whitesmoke;
+    z-index: 2;
+}
+#side-navigation>ul>li{
+    position: relative;
+    transition: 2s;
+    margin: 0.5em;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    padding: 0.5em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+#side-navigation>ul>li:hover{
+    left: 1em;
+}
+#side-navigation .icon{
+    margin-right: 1em;
+}
+.icon{
+    height: 1.9em;
+    width: 1.9em;
+}
+/*Footer*/
+footer{
+    border-top: 1px solid black;
+    height: 40vh;
+    position: relative;
+    padding: 1em;
+    z-index: 1;
+    background-color: #102e2e;
+}
+#footer-top{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer-top>span>*, #footer-bottom>*{
+    color: whitesmoke;
+}
+#footer-top>span:nth-child(1){
+    width: 40%;
+    text-align: justify;
+}
+#footer-bottom{
+    width: 100%;
+    display: flex;
+    padding-top: 1em;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-icon{
+    padding: 0.2em;
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    fill: whitesmoke !important;
+    height: 1.5em;
+    width: 1.5em;
+}
+.footer-title{
+    margin-bottom: 1em;
+}
+
+/*About*/
+#about{
+    width: 100%;
+    padding-top: 10em;
+    text-align: center;
+    border: 1px solid black;
+}
+#about p{
+    line-height: 2em;
+}
+#about>div{
+    margin: 5em;
+}
+/*Contact*/
+#contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 7em 1em 0 1em;
+}
+#contact-data-send{
+    display: flex;
+    margin-top: 2em;
+}
+#contact-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    padding-left: 2em;
+}
+.contact-type{
+    width: 100%;
+    padding: 1em;
+}
+#contact-input input[type="submit"]{
+    font-size: 1em;
+    padding: 0.5em;
+    width: 6em;
+    align-self: flex-end;
+}
+/*Login*/
+#login{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5em;
+    border: 1px solid black;
+}
+#login-data-send{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30em;
+    height: 35em;
+    padding-top: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:  0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+#login-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70%;
+}
+#login-input>*{
+    position: relative;
+    height: 2em;
+}
+#login-input input{
+    padding-left: 1em;  
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:  0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+#login-input input:focus{
+    border: 1px solid orangered;
+}
+#login-input .password{
+    width: 100%;
+    height: 100%;
+}
+#login-data-send>img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+#login-input img{
+    height: 70%;
+    position: absolute;
+    display: none;
+    top: 15%;
+    right: 0.5em;
+}
+#login-button{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+#login-button>input{
+    width: 7em;
+    font-size: 1em;
+    font-weight: 900;
+    padding: 0.5em;
+    background-color: orangered;
+    border-radius: 10px;
+    color: whitesmoke;
+    border-style: none;
+}
+/*Signup*/
+#signup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#signup-data-send{
+    height: 80vh;
+    width: 30%;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 10px;
+}
+#signup input{
+    padding-left: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+#signup-fullname, #signup-passwords{
+    display: flex;
+    justify-content: space-between;
+}
+#signup input[type="text"], #signup input[type="password"]{
+    width: 48%;
+}
+#signup-footer{
+   display: flex;
+   justify-content: space-around;
+}
+#signup-age-and-gender{
+    display: flex;
+    justify-content: space-between;
+}
+.signup-input{
+    height: 2em;
+}
+#signup-submit{
+    height: 2em;
+    width: 8em;
+    padding-right: 1em;
+    background-color: orangered;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+#signup-footer>a:hover{
+    color: orangered;
+}
+/*Sell*/
+#sell-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: snow;
+}
+#sell-page form{
+    width: 90%;
+    height: 90vh;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:  0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#sell-page h3, #sell-preview-page>h3{
+    align-self:flex-start;
+    padding-left: 1em;
+}
+#sell-content{
+    width: 98%;
+    height: 95%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#sell-first-section{
+    width: 30%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#sell-second-section{
+    display: grid;
+    place-items: center;
+    width: 70%;
+}
+.sell-section{
+    height: 100%;
+}
+#sell-first-section>div{
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sell-image{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 8em;
+    width: 14em;
+}
+#sell-first-section input[type="file"]{
+    border: 2px solid orangered;
+    background-color: orangered;
+    border-radius: 5px;
+    margin-top: 1em;
+    width: 70%;
+    color: whitesmoke;
+}
+#sell-page textarea{
+    resize: none;
+    padding-left: 0.2em;
+    width: 92%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#sell-input-area{
+    height: 100%;
+    
+    padding: 0.5em;
+}
+#sell-input-area>div{
+    padding-left: 0.9em;
+}
+.sell-button{
+    height: 2.3em;
+    width: 8em;
+    border-radius: 25%;
+    background-color: orangered;
+    border-style: none;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+#sell-buttons{
+    display: flex;
+    justify-content: space-around;
+    padding-right: 0.9em;
+}
+#sell-preview-page{
+    width: 93%;
+    height: 93%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+#sell-preview-page>div{
+    margin: auto;
+    margin-top: 1em;
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#sell-preview-page>div>div:nth-of-type(1){
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+#sell-my-products{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1em 1em 3em 1em;
+}
+#sell-my-account{
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+}
+#sell-my-account>img{
+    margin-right: 1em;
+    height: 3em;
+    width: 3em;
+}
+#sell-done{
+    position: fixed;
+    right: 14em;
+    bottom: 6em;
+}
+#sell-my-products img{
+    height: 8em;
+    width: 40%;
+    margin: 0.5em;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#sell-my-products>div{
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 50%;
+    overflow: auto;
+    margin-top: 1em;
+}
+#sell-product-title{
+    margin-top: 0.5em;
+}
+#sell-product-description{
+    margin-top: 1em;
+}
+#sell-product-info{
+    width: 60%;
+    padding: 0.5em;
+    text-align: justify;
+}
+/*Buy*/
+#buy-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 15vh;
+}
+#buy-latest-products{
+    height: 11em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+#buy-latest-products>div{
+    width: 98%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding-left: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) ;
+}
+#buy-latest-products>div>img{
+    height: 80%;
+    width: 15%;
+    margin: 1em;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+#buy-recommendation-products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}  
+#buy-recommendation-products>div{   
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.buy-products{
+    width: 100%;
+}
+.buy-trigger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.buy-trigger>div{
+    width: 90%;
+}   
+.buy-trigger>img{
+    width: 90%;
+    height: 70%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.buy-pop-up{
+    position: fixed;
+    height: 90vh;
+    top: 50%;
+    left:  50%;
+    display: none;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    width: 35% !important;
+    padding: 2em 1em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 11;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+.buy-pop-up-trigger{
+    display: flex;
+}
+.buy-pop-up img{
+    width: 100%;
+    height: 40%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.seller-details{
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 1em;
+}
+#buy-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+#buy-buttons>*,#buy-buttons>button>a{
+    height: 2em;
+    width: 40%;
+    border-radius: 20%;
+    font-weight: bolder;
+    margin-top: 1em;
+    color: whitesmoke;
+    background-color: orangered;
+    border-style: none;
+}
+.buy-hide-visibility{
+    display: none;
+}
+/*Payment*/
+#payment-page{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+#payment-page form{
+    height: 90%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+}
+#payment-image{
+    height: 13em;
+    width: 28%;
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+}
+#payment-address{
+    margin-right: 1em;
+}
+#payment-address~*{
+    padding-left: 0.1em;
+    width: 80%;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#payment-first-section{
+    padding: 1em 0 0 1em;
+}
+#payment-second-section{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#payment-second-section>span{
+    height: 80%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#payment-second-section>span:nth-child(1){
+    text-indent: 1em;
+    text-align: justify;
+    padding: 1em;
+}
+#payment-quantity-number{
+    width: 30%;
+    height: 100%;
+    padding-left: 1em;
+    border: 2px solid orangered;
+    font-weight: bolder;
+}
+.payment-quantity-button{
+    width: 35%;
+    height: 100%;
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+.payment-quantity-button:nth-of-type(1){
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+}
+.payment-quantity-button:nth-of-type(2){
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+}
+#payment-second-section>span{
+    width: calc(100%/3);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+} 
+#payment-quantity-buttons{
+    display: inline-block;
+    width: 60%;
+}
+#payment-quantity{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+#payment-third-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.payment-button{
+    width: 25%;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border-radius: 20%;
+    background-color: orangered;
+    color: whitesmoke;
+    border-style: none;
+    font-weight: bolder;
+}
+#payment-method{
+    position: absolute;
+    height: 80%;
+    width: 30%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    display: none;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#payment-method>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+#payment-method>div>button, #payment-pop-up>button{
+    font-weight: bolder;
+    background-color: orangered;
+    color: whitesmoke;
+    border-style: none;
+}
+#payment-pop-up{
+    display: none;
+    flex-direction: column;
+    margin-top: 1em;
+    align-items: center;
+    width: 100%;
+}
+#payment-pop-up>button{
+    margin-top: 0.2em;
+}
+.payment-method-size{
+    width: 80%;
+    font-size: 1.5em;
+    border-radius: 20%;
+}
+.payment-footer{
+    width: 40%;
+    font-size: 1.5em;
+    border-radius: 20%;
+}
+/*Order*/
+#order{
+    height: 80vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    margin: auto;
+    padding: 2em;
+    background-color: whitesmoke;
+}
+#order>img{
+    height: 10em;
+    width: 10em;
+}
+#order>h1{
+    font-weight: bolder;
+
+}
+#order>button{
+    width: 35%;
+    padding: 1em;
+    border-radius: 20%;
+    background-color: orangered;
+    color: whitesmoke;
+    font-weight: bolder;
+    border-style: none;
+}
